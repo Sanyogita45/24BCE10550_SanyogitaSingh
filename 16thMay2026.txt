@@ -1,0 +1,52 @@
+show databases;
+
+create database VITCampus1;
+
+drop database VITCampus1;
+
+use VITCampus;
+
+create table CSE(
+sid int8,
+sname varchar(50),
+smarks int1
+);
+
+create table Mech(
+sid int8,
+sname varchar(50),
+smarks int1
+);
+
+create table EEE(
+sid int8,
+sname varchar(50),
+smarks int1
+);
+
+show tables from vitcampus;
+
+select * from cse;
+
+insert into cse values (101,'Sanyogita',80);
+insert into cse values (102,'Sreya',88);
+insert into cse values (103,'Aparna',90);
+insert into cse values (104,'Sam',56);
+insert into cse values (105,'Ron',99);
+
+select * from mech;
+
+insert into mech values (101,'Sanyogita',80);
+insert into mech values (102,'Sreya',88);
+insert into mech values (103,'Aparna',90);
+insert into mech values (104,'Sam',56);
+insert into mech values (105,'Ron',99);
+
+select * from eee;
+
+insert into eee values (101,'Sanyogita',80);
+insert into eee values (102,'Sreya',88);
+insert into eee values (103,'Aparna',90);
+insert into eee values (104,'Sam',56);
+insert into eee values (105,'Ron',99);
+              
