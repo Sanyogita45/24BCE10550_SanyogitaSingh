@@ -1,5 +1,7 @@
 show databases;
 
+create databse VITCampus;
+
 create database VITCampus1;
 
 drop database VITCampus1;
