@@ -1,0 +1,140 @@
+use vitcampus;
+
+show tables from vitcampus;
+
+select * from worker;
+
+select first_name, department, salary from worker
+where department='admin' and salary > 100000;
+
+select first_name, department, salary from worker
+where department='admin' or salary >= 100000;
+
+select worker_id, first_name, department, salary from worker
+where worker_id=1 or worker_id=7;
+
+select worker_id, first_name, department, salary from worker
+where worker_id in (1,6,7);
+
+select worker_id, first_name, department, salary from worker
+where worker_id not in (1,6,7);
+
+select * from worker
+where salary between 100000 and 300000;
+
+select * from worker
+where salary between 100000 and 300000
+AND department NOT IN ('hr','admin');
+
+SELECT first_name, salary, department
+FROM worker
+WHERE YEAR(joining_date) = 2014 AND salary < 200000;
+
+SELECT first_name, joining_date, department
+FROM worker
+WHERE joining_date BETWEEN '2014-01-01' AND '2014-03-01';
+
+SELECT first_name, salary, department
+FROM worker
+WHERE first_name IN ('Monika', 'Vishal', 'Vivek');
+
+SELECT first_name, salary, department
+FROM worker
+WHERE salary NOT IN (75000, 90000, 100000);
+
+select * from worker;
+
+select * from worker where first_name like '__i%';
+
+select * from worker where first_name like 'V%k';
+
+select * from worker where first_name like '_i__%';
+
+select * from worker where first_name like '_i__a%';
+
+SELECT * FROM worker
+WHERE first_name LIKE 'S%h';
+
+SELECT * FROM worker
+WHERE last_name LIKE 'S%h';
+
+SELECT * FROM worker
+WHERE first_name LIKE 'V%' AND last_name LIKE 'S%';
+
+SELECT * FROM worker
+WHERE department LIKE '%count%';
+
+select min(salary) from worker;
+
+select min(salary) from worker where department='admin';
+
+select max(salary) from worker where department='hr';
+
+select count(worker_id) from worker where department='admin';
+
+select count(worker_id) from worker where department='hr';
+
+select count(worker_id) from worker where department='admin';
+
+select sum(salary) from worker where department='admin';
+
+select avg(salary) from worker where department='admin';
+
+select min(salary) from worker where department='admin' and first_name NOT LIKE '%a%';
+
+
+SELECT first_name, last_name, salary, department
+FROM worker
+WHERE department = 'Admin'
+AND first_name NOT LIKE '%a%'
+AND salary = (
+     SELECT MIN(salary)
+    FROM worker
+    WHERE department = 'Admin'
+    AND first_name NOT LIKE '%a%'
+);
+
+
+SELECT COUNT(*) AS total_workers 
+FROM worker;
+
+SELECT SUM(salary) AS total_salary 
+FROM worker;
+
+SELECT AVG(salary) AS average_salary 
+FROM worker;
+
+SELECT MIN(salary) AS min_salary 
+FROM worker;
+
+SELECT MAX(salary) AS max_salary 
+FROM worker;
+
+select salary from worker 
+union
+select salary from worker;
+
+select salary from worker 
+union all
+select salary from worker;
+
+select * from worker;
+
+select worker_id as RollNumber from worker;
+
+select distinct(department) from worker;
+
+select worker_id, first_name,
+CASE
+   WHEN salary > 300000 THEN 'Rich People'
+   WHEN salary > 100000 AND salary > 299999 THEN 'Middle People'
+   ELSE 'Poor'
+END 
+AS Status
+FROM worker;
+
+create view minSalaryAdmin as select min(salary) from worker;
+
+create view maxSalaryAdmin as select max(salary) from worker;
+
+select * from minSalaryAdmin;
