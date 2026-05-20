@@ -1,0 +1,84 @@
+use vitcampus;
+CREATE TABLE Persons(
+     ID int NOT NULL,
+     LASTName varchar(255) UNIQUE NOT NULL,
+     FirstName varchar(255) NOT NULL,
+     Age int
+);
+INSERT INTO persons VALUES(101,'Singh','Sanyogita',20);
+desc persons;
+select * from persons;
+
+ALTER TABLE Persons
+ADD UNIQUE(AGE);
+
+ALTER TABLE Persons
+DROP CONSTRAINT Age;
+
+drop table persons;
+CREATE TABLE Persons(
+     ID int NOT NULL,
+     LastName varchar(255) NOT NULL,
+     FirstName varchar(255) NOT NULL,
+     Age int NOT NULL,
+     CHECK (Age>=18 and age<=22)
+);
+desc persons;
+insert into persons values(101,'Singh','Sanyogita',20);
+
+ALTER TABLE persons
+ADD CHECK(Age>=18);
+insert into persons values(101,'Singh','Sanyogita',20);
+
+CREATE TABLE Persons1(
+     ID int NOT NULL,
+     LastName varchar(255) NOT NULL,
+     FirstName varchar(255) NOT NULL,
+     Age int,
+     City varchar(255) DEFAULT 'COIMBATORE'
+);
+desc persons1;
+
+create table products(
+    pid int primary key,
+    pname varchar(100) not null,
+    prefNo int not null unique
+);
+
+desc products;
+
+insert into products values(102,"electronics",19928);
+insert into products values(102,"electronics",19929);
+insert into products values(103,"electronics",19930);
+select * from products;
+
+ALTER table Persons
+ADD PRIMARY KEY(ID);
+
+ALTER TABLE Persons
+DROP PRIMARY KEY;
+
+create table category(
+    cid int primary key,
+    cname varchar(100) not null
+);
+insert into category values(101,'electroics'),(102,'Home Appliances');
+select * from category;
+
+drop table products;
+
+create table products(
+    pid int primary key,
+    pname varchar(100) not null,
+    cid int,
+    FOREIGN KEY (cid) REFERENCES category(cid)
+);
+desc products;
+insert into products values(501,'Laptop',101);
+insert into products values(502,'Wooden Chair',102);
+insert into products values(503,'Power Bank Samsung',105);
+
+insert into products values(504,'Power Bank Lenovo',64-bit encry key);
+
+select * from products;
+delete from category where cid=101;
