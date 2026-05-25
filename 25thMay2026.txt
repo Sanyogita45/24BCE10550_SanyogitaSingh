@@ -1,0 +1,96 @@
+show databases
+admin   40.00 KiB
+config  12.00 KiB
+local   40.00 KiB
+
+show dbs
+admin   40.00 KiB
+config  12.00 KiB
+local   40.00 KiB
+
+use vit
+switched to db vit
+db
+vit
+db.dropDatabase()
+{ ok: 1, dropped: 'vit' }
+
+show databases
+admin   40.00 KiB
+config  12.00 KiB
+local   40.00 KiB
+
+use vit
+already on db vit
+shows dbs
+
+show dbs
+admin   40.00 KiB
+config  12.00 KiB
+local   40.00 KiB
+
+db.createCollection("Student")
+{ ok: 1 }
+show collections
+Student
+db.Student.drop()
+true
+show collections
+db.createCollection("Employee")
+{ ok: 1 }
+db.Employee.insert({name: 'John', marks: 90, location: 'Pune'})
+
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a145934b94b1b6bc411ca46')
+  }
+}
+db.Employee.insert({name: 'San', marks: 80, location: 'Chennai'})
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a145967b94b1b6bc411ca47')
+  }
+}
+db.Employee.find()
+{
+  _id: ObjectId('6a145934b94b1b6bc411ca46'),
+  name: 'John',
+  marks: 90,
+  location: 'Pune'
+}
+{
+  _id: ObjectId('6a145967b94b1b6bc411ca47'),
+  name: 'San',
+  marks: 80,
+  location: 'Chennai'
+}
+db.Employee.insert({name: 'Gita', department: 'CSE'})
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a1459c0b94b1b6bc411ca48')
+  }
+}
+db.Employee.find()
+{
+  _id: ObjectId('6a145934b94b1b6bc411ca46'),
+  name: 'John',
+  marks: 90,
+  location: 'Pune'
+}
+{
+  _id: ObjectId('6a145967b94b1b6bc411ca47'),
+  name: 'San',
+  marks: 80,
+  location: 'Chennai'
+}
+{
+  _id: ObjectId('6a1459c0b94b1b6bc411ca48'),
+  name: 'Gita',
+  department: 'CSE'
+}
+vit
+
+
