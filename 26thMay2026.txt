@@ -572,6 +572,7 @@ db.products.find({
     512
   ]
 }
+
 {
   _id: 3,
   name: 'SmartTablet',
@@ -597,4 +598,50 @@ db.products.find({
     128,
     256
   ]
+}
+
+
+
+db.products.find({
+    "spec.screen": {
+        $gte: 7
+    }
+}, {
+    name: 1,
+    "spec.screen": 1
+})
+{
+  _id: 2,
+  name: 'xTablet',
+  spec: {
+    screen: 9.5
+  }
+}
+{
+  _id: 3,
+  name: 'SmartTablet',
+  spec: {
+    screen: 9.7
+  }
+}
+{
+  _id: 4,
+  name: 'SmartPad',
+  spec: {
+    screen: 9.7
+  }
+}
+{
+  _id: 5,
+  name: 'SmartPhone',
+  spec: {
+    screen: 9.7
+  }
+}
+{
+  _id: 5,
+  name: 'SmartPhone',
+  spec: {
+    screen: 9.7
+  }
 }
