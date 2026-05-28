@@ -630,9 +630,3 @@ db.products.find({
   name: 'xTablet',
   price: 899
 }
-
-
-
-
-
-
