@@ -30,6 +30,10 @@ public class Testing1 {
 
 
 
+OUTPUT:
+105  Arthi  92
+
+
 //--------------------------------------Crud Operations-----------------------------------------------
 //CRUD_Test.java
 
@@ -208,3 +212,25 @@ public class DB_Connection {
         }
     }
 }
+
+
+OUTPUT:
+
+Database connected successfully!
+Insert Query: com.mysql.cj.jdbc.ClientPreparedStatement: insert into user(sl_no, name, email) values ('1', 'jinu', 'jinu@gmail.com')
+Inserted 1 row(s) successfully.
+Database connected successfully!
+Insert Query: com.mysql.cj.jdbc.ClientPreparedStatement: insert into user(sl_no, name, email) values ('2', 'jawad', 'jawad@gmail.com')
+Inserted 1 row(s) successfully.
+Database connected successfully!
+Read Query: com.mysql.cj.jdbc.ClientPreparedStatement: select * from user where sl_no = '2'
+Sl no  - 2
+Name   - jawad
+Email  - jawad@gmail.com
+---------------
+Database connected successfully!
+Update Query: com.mysql.cj.jdbc.ClientPreparedStatement: update user set sl_no = '22', name = 'jawad2', email = 'jawad2@gmail.com' where sl_no = '2'
+Updated 1 row(s) successfully.
+Database connected successfully!
+Delete Query: com.mysql.cj.jdbc.ClientPreparedStatement: delete from user where sl_no = '1'
+Deleted 1 row(s) successfully.
