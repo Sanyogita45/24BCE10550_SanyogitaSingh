@@ -804,8 +804,3 @@ db.products.deleteMany({})
   acknowledged: true,
   deletedCount: 3
 }
-
-
-
-
-
