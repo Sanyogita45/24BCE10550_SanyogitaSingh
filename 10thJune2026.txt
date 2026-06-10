@@ -1,0 +1,630 @@
+//localhost:27020 [PRIMARY]
+
+use testDB
+switched to db testDB
+
+
+db.testCollection.insertOne({ name: "Sany", roll: 1 })
+{
+  acknowledged: true,
+  insertedId: ObjectId('6a2965842838df5a16e60988')
+}
+
+
+
+rs.status()
+{
+  set: 'myReplSet',
+  date: 2026-06-10T13:24:29.191Z,
+  myState: 1,
+  term: Long('2'),
+  syncSourceHost: '',
+  syncSourceId: -1,
+  heartbeatIntervalMillis: Long('2000'),
+  majorityVoteCount: 2,
+  writeMajorityCount: 2,
+  votingMembersCount: 3,
+  writableVotingMembersCount: 3,
+  optimes: {
+    lastCommittedOpTime: { ts: Timestamp({ t: 1781097860, i: 2 }), t: Long('2') },
+    lastCommittedWallTime: 2026-06-10T13:24:20.986Z,
+    readConcernMajorityOpTime: { ts: Timestamp({ t: 1781097860, i: 2 }), t: Long('2') },
+    appliedOpTime: { ts: Timestamp({ t: 1781097860, i: 2 }), t: Long('2') },
+    durableOpTime: { ts: Timestamp({ t: 1781097860, i: 2 }), t: Long('2') },
+    writtenOpTime: { ts: Timestamp({ t: 1781097860, i: 2 }), t: Long('2') },
+    lastAppliedWallTime: 2026-06-10T13:24:20.986Z,
+    lastDurableWallTime: 2026-06-10T13:24:20.986Z,
+    lastWrittenWallTime: 2026-06-10T13:24:20.986Z
+  },
+  lastStableRecoveryTimestamp: Timestamp({ t: 1781097846, i: 1 }),
+  electionCandidateMetrics: {
+    lastElectionReason: 'electionTimeout',
+    lastElectionDate: 2026-06-10T13:23:36.250Z,
+    electionTerm: Long('2'),
+    lastCommittedOpTimeAtElection: { ts: Timestamp({ t: 0, i: 0 }), t: Long('-1') },
+    lastSeenWrittenOpTimeAtElection: { ts: Timestamp({ t: 1781016008, i: 1 }), t: Long('1') },
+    lastSeenOpTimeAtElection: { ts: Timestamp({ t: 1781016008, i: 1 }), t: Long('1') },
+    numVotesNeeded: 2,
+    priorityAtElection: 1,
+    electionTimeoutMillis: Long('10000'),
+    numCatchUpOps: Long('0'),
+    newTermStartDate: 2026-06-10T13:23:36.462Z,
+    wMajorityWriteAvailabilityDate: 2026-06-10T13:23:36.484Z
+  },
+  members: [
+    {
+      _id: 0,
+      name: 'localhost:27020',
+      health: 1,
+      state: 1,
+      stateStr: 'PRIMARY',
+      uptime: 80,
+      optime: { ts: Timestamp({ t: 1781097860, i: 2 }), t: Long('2') },
+      optimeDate: 2026-06-10T13:24:20.000Z,
+      optimeWritten: { ts: Timestamp({ t: 1781097860, i: 2 }), t: Long('2') },
+      optimeWrittenDate: 2026-06-10T13:24:20.000Z,
+      lastAppliedWallTime: 2026-06-10T13:24:20.986Z,
+      lastDurableWallTime: 2026-06-10T13:24:20.986Z,
+      lastWrittenWallTime: 2026-06-10T13:24:20.986Z,
+      syncSourceHost: '',
+      syncSourceId: -1,
+      infoMessage: 'Could not find member to sync from',
+      electionTime: Timestamp({ t: 1781097816, i: 1 }),
+      electionDate: 2026-06-10T13:23:36.000Z,
+      configVersion: 1,
+      configTerm: 2,
+      self: true,
+      lastHeartbeatMessage: ''
+    },
+    {
+      _id: 1,
+      name: 'localhost:27021',
+      health: 1,
+      state: 2,
+      stateStr: 'SECONDARY',
+      uptime: 63,
+      optime: { ts: Timestamp({ t: 1781097860, i: 2 }), t: Long('2') },
+      optimeDurable: { ts: Timestamp({ t: 1781097860, i: 2 }), t: Long('2') },
+      optimeWritten: { ts: Timestamp({ t: 1781097860, i: 2 }), t: Long('2') },
+      optimeDate: 2026-06-10T13:24:20.000Z,
+      optimeDurableDate: 2026-06-10T13:24:20.000Z,
+      optimeWrittenDate: 2026-06-10T13:24:20.000Z,
+      lastAppliedWallTime: 2026-06-10T13:24:20.986Z,
+      lastDurableWallTime: 2026-06-10T13:24:20.986Z,
+      lastWrittenWallTime: 2026-06-10T13:24:20.986Z,
+      lastHeartbeat: 2026-06-10T13:24:28.637Z,
+      lastHeartbeatRecv: 2026-06-10T13:24:29.163Z,
+      pingMs: Long('0'),
+      lastHeartbeatMessage: '',
+      syncSourceHost: 'localhost:27020',
+      syncSourceId: 0,
+      infoMessage: '',
+      configVersion: 1,
+      configTerm: 2
+    },
+    {
+      _id: 2,
+      name: 'localhost:27022',
+      health: 1,
+      state: 2,
+      stateStr: 'SECONDARY',
+      uptime: 52,
+      optime: { ts: Timestamp({ t: 1781097860, i: 2 }), t: Long('2') },
+      optimeDurable: { ts: Timestamp({ t: 1781097860, i: 2 }), t: Long('2') },
+      optimeWritten: { ts: Timestamp({ t: 1781097860, i: 2 }), t: Long('2') },
+      optimeDate: 2026-06-10T13:24:20.000Z,
+      optimeDurableDate: 2026-06-10T13:24:20.000Z,
+      optimeWrittenDate: 2026-06-10T13:24:20.000Z,
+      lastAppliedWallTime: 2026-06-10T13:24:20.986Z,
+      lastDurableWallTime: 2026-06-10T13:24:20.986Z,
+      lastWrittenWallTime: 2026-06-10T13:24:20.986Z,
+      lastHeartbeat: 2026-06-10T13:24:28.637Z,
+      lastHeartbeatRecv: 2026-06-10T13:24:29.148Z,
+      pingMs: Long('0'),
+      lastHeartbeatMessage: '',
+      syncSourceHost: 'localhost:27020',
+      syncSourceId: 0,
+      infoMessage: '',
+      configVersion: 1,
+      configTerm: 2
+    }
+  ],
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781097860, i: 2 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781097860, i: 2 })
+}
+
+
+
+
+
+db.testCollection.drop()
+true
+
+
+
+//localhost:27021 [SECONDARY] 
+
+myReplSet [direct: secondary] test> use testDB
+switched to db testDB
+myReplSet [direct: secondary] testDB> db.students.insertOne({name: "test"})
+MongoServerError[NotWritablePrimary]: not primary
+myReplSet [direct: secondary] testDB>
+
+
+//===============================SHARDING===================================
+
+C:\Windows\System32>mkdir D:\data\config
+
+C:\Windows\System32>mkdir D:\data\shard1
+
+C:\Windows\System32>mkdir D:\data\shard2
+
+C:\Windows\System32>dir D:\data
+ Volume in drive D is New Volume
+ Volume Serial Number is 6D2B-2C10
+
+ Directory of D:\data
+
+10-06-2026  19:18    <DIR>          .
+10-06-2026  19:18    <DIR>          config
+10-06-2026  19:17    <DIR>          db0
+10-06-2026  19:17    <DIR>          db1
+10-06-2026  19:16    <DIR>          db2
+10-06-2026  19:18    <DIR>          shard1
+10-06-2026  19:18    <DIR>          shard2
+               0 File(s)              0 bytes
+               7 Dir(s)  83,556,970,496 bytes free
+
+
+// CMD Window 1 -- Config Server
+C:\Windows\System32>mongod --configsvr --replSet configReplSet --dbpath D:\data\config --port 27019
+
+//CMD Window 2 -- Shard 1
+C:\Windows\System32>mongod --shardsvr --replSet shard1ReplSet --dbpath D:\data\shard1 --port 27011
+
+//CMD Window 3 -- Shard 2
+C:\Windows\System32>mongod --shardsvr --replSet shard2ReplSet --dbpath D:\data\shard2 --port 27012
+
+
+
+
+//port 27019 
+rs.initiate({
+    _id: "configReplSet",
+    configsvr: true,
+    members: [{ _id: 0, host: "localhost:27019" }]
+})
+
+{
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781099483, i: 1 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781099483, i: 1 })
+}
+configReplSet [direct: secondary] test>
+
+
+
+
+
+//port 27011
+rs.initiate({
+    _id: "shard1ReplSet",
+    members: [{ _id: 0, host: "localhost:27011" }]
+})
+
+{
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781099583, i: 1 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781099583, i: 1 })
+}
+shard1ReplSet [direct: secondary] test>
+
+
+
+
+//port 27012
+rs.initiate({
+    _id: "shard2ReplSet",
+    members: [{ _id: 0, host: "localhost:27012" }]
+})
+
+{
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781099688, i: 1 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781099688, i: 1 })
+}
+shard2ReplSet [direct: secondary] test>
+
+
+
+
+CMD Window 4: mongos router
+mongos --configdb configReplSet/localhost:27019 --port 27017
+
+
+
+//port 27017
+[direct: mongos] test> sh.addShard("shard1ReplSet/localhost:27011")
+{
+  shardAdded: 'shard1ReplSet',
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781100122, i: 1 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781100122, i: 1 })
+}
+[direct: mongos] test> sh.addShard("shard2ReplSet/localhost:27012")
+{
+  shardAdded: 'shard2ReplSet',
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781100893, i: 57 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781100893, i: 57 })
+}
+
+
+
+
+[direct: mongos] test> sh.enableSharding("eCommerceDB")
+{
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781100932, i: 21 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781100932, i: 21 })
+}
+
+
+
+
+
+[direct: mongos] test> sh.shardCollection("eCommerceDB.orders",{customer_id: "hashed"})
+{
+  collectionsharded: 'eCommerceDB.orders',
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781100970, i: 52 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operation Time: Timestamp({ t: 1781100970, i: 52 })
+}
+
+
+
+
+[direct: mongos] test> use eCommerceDB
+switched to db eCommerceDB
+
+
+[direct: mongos] eCommerceDB> for(let i = 0; i < 1000; i++){
+| db.orders.insertOne({customer_id: "cust_" + i, amount: Math.random()*100});
+| }
+{
+  acknowledged: true,
+  insertedId: ObjectId('6a297236825af37d1cabc4fb')
+}
+
+
+
+[direct: mongos] eCommerceDB> sh.status()
+shardingVersion
+{
+  _id: ObjectId('6a296bdb6c12bfcf2369e5f2'),
+  clusterId: ObjectId('6a296bdb6c12bfcf2369e5f1')
+}
+---
+shards
+[
+  {
+    _id: 'shard1ReplSet',
+    host: 'shard1ReplSet/localhost:27011',
+    topologyTime: Timestamp({ t: 1781100121, i: 32 }),
+    replSetConfigVersion: Long('-1')
+  },
+  {
+    _id: 'shard2ReplSet',
+    host: 'shard2ReplSet/localhost:27012',
+    topologyTime: Timestamp({ t: 1781100893, i: 33 }),
+    replSetConfigVersion: Long('-1')
+  }
+]
+---
+active mongoses
+[ { '8.3.2': 1 } ]
+---
+autosplit
+{ 'Currently enabled': 'yes' }
+---
+balancer
+{
+  'Currently enabled': 'yes',
+  'Currently running': 'no',
+  'Failed balancer rounds in last 5 attempts': 0,
+  'Migration Results for the last 24 hours': 'No recent migrations'
+}
+---
+shardedDataDistribution
+[
+  {
+    ns: 'config.system.sessions',
+    shards: [
+      {
+        shardName: 'shard1ReplSet',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 13,
+        ownedSizeBytes: 1287,
+        orphanedSizeBytes: 0
+      }
+    ]
+  },
+  {
+    ns: 'eCommerceDB.orders',
+    shards: [
+      {
+        shardName: 'shard1ReplSet',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 491,
+        ownedSizeBytes: 30933,
+        orphanedSizeBytes: 0
+      },
+      {
+        shardName: 'shard2ReplSet',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 509,
+        ownedSizeBytes: 32067,
+        orphanedSizeBytes: 0
+      }
+    ]
+  }
+]
+---
+databases
+[
+  {
+    database: { _id: 'config', primary: 'config', partitioned: true },
+    collections: {
+      'config.system.sessions': {
+        shardKey: { _id: 1 },
+        unique: false,
+        balancing: true,
+        allowMigrations: true,
+        chunkMetadata: [ { shard: 'shard1ReplSet', nChunks: 1 } ],
+        chunks: [
+          { min: { _id: MinKey() }, max: { _id: MaxKey() }, 'on shard': 'shard1ReplSet', 'last modified': Timestamp({ t: 1, i: 0 }) }
+        ],
+        tags: []
+      }
+    }
+  },
+  {
+    database: {
+      _id: 'eCommerceDB',
+      primary: 'shard2ReplSet',
+      version: {
+        uuid: UUID('af1ea3c8-6172-4c64-8a40-d58037499bbd'),
+        timestamp: Timestamp({ t: 1781100932, i: 9 }),
+        lastMod: 1
+      }
+    },
+    collections: {
+      'eCommerceDB.orders': {
+        shardKey: { customer_id: 'hashed' },
+        unique: false,
+        balancing: true,
+        allowMigrations: true,
+        chunkMetadata: [
+          { shard: 'shard1ReplSet', nChunks: 1 },
+          { shard: 'shard2ReplSet', nChunks: 1 }
+        ],
+        chunks: [
+          { min: { customer_id: MinKey() }, max: { customer_id: Long('0') }, 'on shard': 'shard2ReplSet', 'last modified': Timestamp({ t: 1, i: 0 }) },
+          { min: { customer_id: Long('0') }, max: { customer_id: MaxKey() }, 'on shard': 'shard1ReplSet', 'last modified': Timestamp({ t: 1, i: 1 }) }
+        ],
+        tags: []
+      }
+    }
+  }
+]
+
+
+
+
+
+[direct: mongos] eCommerceDB> db.orders.getShardDistribution()
+Shard shard2ReplSet at shard2ReplSet/localhost:27012
+{
+  data: '31KiB',
+  docs: 509,
+  chunks: 1,
+  'estimated data per chunk': '31KiB',
+  'estimated docs per chunk': 509
+}
+---
+Shard shard1ReplSet at shard1ReplSet/localhost:27011
+{
+  data: '30KiB',
+  docs: 491,
+  chunks: 1,
+  'estimated data per chunk': '30KiB',
+  'estimated docs per chunk': 491
+}
+---
+Totals
+{
+  data: '62KiB',
+  docs: 1000,
+  chunks: 2,
+  'Shard shard2ReplSet': [
+    '50.9 % data',
+    '50.9 % docs in cluster',
+    '63B avg obj size on shard'
+  ],
+  'Shard shard1ReplSet': [
+    '49.09 % data',
+    '49.1 % docs in cluster',
+    '63B avg obj size on shard'
+  ]
+}
+[direct: mongos] eCommerceDB>
+
+
+
+
+// Final Distribution: 
+shard2ReplSet → 509 docs → 50.9%
+shard1ReplSet → 491 docs → 49.09%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
